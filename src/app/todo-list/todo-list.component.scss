@@ -1,0 +1,36 @@
+.todo-layout {
+    padding: 15px;
+
+    .todo-list-container {
+        border: 1px solid #3333;
+        border-radius: 3px;
+
+        .todo-list-header {
+            padding: 15px;
+            background: #ebebeb;
+            border-bottom: 1px solid #3333;
+        }
+
+        .no-item-container {
+            padding: 10px;
+        }
+
+        .todo-list-items {
+            padding: 10px;
+
+            .todo-item-checkbox {
+                width: 20px;
+                height: 20px;
+            }
+
+            .item-checked {
+                vertical-align: super;
+                text-decoration: line-through;
+            }
+
+            .item-unchecked {
+                vertical-align: super;
+            }
+        }
+    }
+}
