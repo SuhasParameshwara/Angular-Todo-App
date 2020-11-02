@@ -21,11 +21,19 @@ export class TodoListComponent implements OnInit {
     this.listContainerHeight = window.innerHeight - 130;
   }
 
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.code === "Enter") {
+      this.addItem();
+    }
+  }
+
   addItem() {
     const itemDescriptions = this.todoItems.map((todoItem) => todoItem.itemDescription.toLowerCase());
     if (!itemDescriptions.includes(this.currentTodoItemDescription.toLowerCase())) {
       const todoItem = new TodoItem();
       todoItem.itemDescription = this.currentTodoItemDescription;
+      this.currentTodoItemDescription = "";
       this.todoItems.push(todoItem);
       this.showErrorMessage = false;
       return;
